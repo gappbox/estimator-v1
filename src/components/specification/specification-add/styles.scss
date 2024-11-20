@@ -1,0 +1,37 @@
+.specification-add {
+    background: rgba(135, 181, 31, 0.87);
+    border: 9px solid #353336;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: -69px;
+    z-index: 1;
+    padding: 9px 15px 0;
+    height: 58px;
+    width: 69px;
+    
+    &:hover {
+        background: #739622;
+    }
+    
+    &[data-disabled="true"] {
+        display: none;
+    }
+    
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+.specification-add__handler {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    
+    
+}

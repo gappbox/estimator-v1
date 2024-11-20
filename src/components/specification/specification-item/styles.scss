@@ -1,0 +1,108 @@
+@use '../../../assets/styles/base/variables';
+@use '../../../assets/styles/base/mixins';
+@use '../../../assets/styles/base/helpers';
+
+.specification__list {
+    .table-info {
+        td {
+            vertical-align: middle;
+        }
+    }
+}
+
+.specification-item {
+    position: relative;
+    padding: 0 0 14px;
+
+    &:last-child {
+        padding: 0;
+    }
+
+    .specification__label {
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="search"],
+    textarea {
+        display: none;
+        max-width: 207px;
+        max-height: 120px;
+    }
+
+    .specification-item_is-edit {
+        .specification__label {
+            display: none;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="search"],
+        textarea {
+            @include helpers.input-theme;
+
+            & {
+                display: block;
+                min-height: 26px;
+                line-height: 18px;
+                padding: 0 3px 1px;
+            }
+        }
+
+        textarea {
+            min-height: 80px;
+        }
+    }
+}
+
+.specification-item__index {
+    @include mixins.inline-block;
+    background: #8ab724;
+    padding: 2px 5px;
+    height: 22px;
+    text-align: center;
+    min-width: 22px;
+}
+
+.specification-item__tools {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    > div {
+        float: left;
+        margin: 0 0 0 1px;
+    }
+
+    a {
+        @include mixins.size(28px, 22px);
+        background: #8ab724;
+        cursor: pointer;
+        padding: 2px 2px;
+        display: block;
+        text-align: center;
+
+        &:hover {
+            background: #739622;
+        }
+    }
+}
+
+.specification__page-title {
+    @include helpers.ellipsis;
+    padding: 0 3px;
+    max-width: 207px;
+}
+
+.specification__label {
+    border: 1px solid rgba(0, 0, 0, 0);
+    min-height: 24px;
+    line-height: 20px;
+    padding: 2px 3px;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 120px;
+}

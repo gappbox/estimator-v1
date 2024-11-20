@@ -1,0 +1,59 @@
+@use './../../../assets/styles/base/helpers';
+@use './../../../assets/styles/base/variables';
+
+.confirm,
+.confirm__overlay {
+    @include helpers.fixed-position;
+    z-index: 9999;
+}
+
+.confirm__overlay {
+    background: variables.$confirm-overlay-background;
+    z-index: 3;
+}
+
+.confirm__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+}
+
+.confirm__outer {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    max-width: 400px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+}
+
+.confirm__inner {
+    border: variables.$confirm-border;
+    background: variables.$confirm-background;
+    color: variables.$confirm-color;
+    padding: 14px;
+    line-height: 20px;
+    font: {
+        size: 17px;
+    }
+    
+    .button {
+        min-width: 80px;
+    }
+}
+
+.confirm__message {
+    margin: 0 0 15px;
+}
+
+.confirm__footer {
+    
+}

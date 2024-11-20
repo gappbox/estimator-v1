@@ -1,0 +1,75 @@
+$white: #fff;
+$black: #000;
+$red: #f00;
+$gray: #ccc;
+$green: #69a776;
+
+$base-bg-color: #fff;
+$base-text-color: #d8d8d8;
+$base-link-color: #f00;
+$base-link-hover-color: #cff;
+$base-min-width: 1200px;
+//$base-min-width:1645px;
+
+
+
+// Buttons
+$btn-color: $white;
+$btn-border: 1px solid #87b324;
+$btn-background: #7fa725;
+$btn-background-hover: #8ab724;
+$btn-background-active: #729422;
+
+
+// Inputs
+$input-color: #d4d4d4;
+$input-color-placeholder: #8c8c8c;
+$input-border: 1px solid #61655a;
+$input-border-hover: #7b7b7b;
+$input-background: #3e3e3e;
+
+
+// Confirm
+$confirm-overlay-background: rgba(0, 0, 0, .6);
+$confirm-border: 4px solid #87b324;
+$confirm-background: #ebebeb;
+$confirm-color: #6d6d6d;
+
+
+// Navbar
+$navbar-background: rgba(0,0,0,.2);
+
+// Navbar item
+$navbar-item-border: 1px dashed #696969;
+$navbar-item-background-hover: rgba(75, 75, 75, .54);
+$navbar-item-background-active: rgb(126, 166, 36);
+
+// Navbar closer
+$navbar-closer-color: #94be37;
+$navbar-closer-color-hover: #a6d835;
+
+// Navbar dropdown
+$navbar-dropdown-color: #d8d8d8;
+$navbar-dropdown-border: 9px solid #353336;
+$navbar-dropdown-background: #474747;
+
+// Navbar title
+$navbar-title-color: #a6d835;
+
+
+// Widget
+$widget-border: 9px solid #353336;
+
+// Widget header
+$widget-header-color: $white;
+$widget-header-border: none;
+$widget-header-background: rgba(135, 181, 31, 0.87);
+$widget-header-text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+
+// Widget content
+$widget-content-color: $white;
+$widget-content-background:  rgba(0, 0, 0, .2);
+$widget-content-box-shadow: inset -1px 0 11px 0px rgba(14, 13, 13, 0.2);
+
+// Preloader
+$preloader-background: rgba(0, 0, 0, .6);

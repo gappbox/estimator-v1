@@ -1,0 +1,133 @@
+@use './../../assets/styles/base/helpers';
+@use './../../assets/styles/base/mixins';
+
+.paint {
+    min-height: calc(100vh - 142px);
+    max-height: calc(100vh - 142px);
+    overflow: auto;
+}
+
+.paint__wrap {
+    position: relative;
+    display: none;
+    
+    &.active {
+        display: block;
+    }
+}
+
+.paint__canvas {
+    display: block;
+    overflow: hidden;
+}
+
+.paint__placeholder {
+    @include helpers.absolute-position;
+    
+    z-index: 10;
+    overflow: hidden;
+    width: 1000px;
+}
+
+.paint__item {
+    box-sizing: border-box;
+    border: 2px solid #7ea624;
+    background: rgba(127, 167, 37, 0.37);
+    position: absolute;
+    z-index: 100;
+    min-width: 50px;
+    min-height: 27px;
+    transform: translate3d(0, 0, 0);
+        
+    &:hover,
+    &.no-selection {
+        border-color: #7ea624;
+        background: rgba(127, 167, 37, 0.59);
+        z-index: 200;
+        
+        .paint__icon-delete,
+        .paint__icon-move,
+        .paint__icon-resize {
+            opacity: 1;
+        }
+    }
+}
+
+.paint__item-fake {
+    box-sizing: border-box;
+    border: 2px solid #7ea624;
+    background: rgba(127, 167, 37, 0.37);
+    position: absolute;
+    z-index: 100;
+    transform: translate3d(0, 0, 0);
+}
+
+.paint__number {
+    background: #7ea624;
+    padding: 3px 2px 4px 0;
+    font: {
+        size: 11px;
+        weight: bold;
+    }
+    min-width: 26px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.paint__icon-delete,
+.paint__icon-resize,
+.paint__icon-move {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+}
+
+.paint__icon-delete {
+    @include mixins.size(24px);
+    
+    background: #7ea624;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    line-height: 21px;
+    font-size: 13px;
+    z-index: 130;
+}
+
+.paint__icon-move {
+    @include mixins.size(100%);
+    
+    cursor: move;
+    right: 0;
+    top: 0;
+    z-index: 120;
+    font-size: 0;
+    line-height: 0;
+}
+
+.paint__icon-resize {
+    @include mixins.size(24px);
+    
+    cursor: ne-resize;
+    background: #7ea624;
+    right: 0;
+    bottom: 0;
+    line-height: 26px;
+    font-size: 13px;
+    padding: 0 0 0 1px;
+    z-index: 200;
+}
+
+.no-selection,
+.no-selection * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}

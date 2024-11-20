@@ -1,0 +1,10 @@
+.angular
+.coverage
+.git
+.gitignore
+.husky
+.idea
+.vscode
+build
+node_modules
+npm-debug.log

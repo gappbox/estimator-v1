@@ -1,0 +1,29 @@
+@use './../../../assets/styles/base/variables';
+@use './../../../assets/styles/base/mixins';
+@use './../../../assets/styles/base/helpers';
+
+.specification-search {
+    font: 15px/17px 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    z-index: 10;
+    
+    label {
+        float: left;
+        padding: 3px 10px 0 0;
+    }
+    
+    input[type="text"] {
+        @include helpers.input-theme;
+        
+        font: {
+            size: 13px;
+        }
+        line-height: 24px;
+        height: 24px;
+        padding: 2px 8px;
+        text-align: center;
+        width: 45px;
+    }
+}

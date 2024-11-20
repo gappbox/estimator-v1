@@ -1,0 +1,90 @@
+@use 'variables' as var;
+@use 'mixins' as mixins;
+
+@mixin listreset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin isolation {
+    position: relative;
+    overflow: hidden;
+}
+
+@mixin fixed-position {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin absolute-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin input-theme {
+    border: var.$input-border;
+    background: var.$input-background;
+    color: var.$input-color;
+    display: block;
+    width: 100%;
+    
+    &:hover {
+        border-color: var.$input-border-hover;
+    }
+    
+    &:focus {
+        outline: none;
+    }
+    
+    @include mixins.placeholder {
+        color: var.$input-color-placeholder;
+    }
+}
+
+@mixin hidden-text {
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+@mixin hidden-elem {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin hidden-file {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+    z-index: 10;
+}

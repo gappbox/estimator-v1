@@ -1,0 +1,35 @@
+.notification {
+    border: 1px solid #7fa625;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    background: #424142;
+    position: fixed;
+    padding: 10px 10px 10px 30px;
+    z-index: 999;
+    min-height: 39px;
+    max-width: 270px;
+    width: 100%;
+    transition: all 0.2s linear;
+    
+    .fa {
+        position: absolute;
+        top: 12px;
+        left: 13px;
+    }
+    
+    &.is-opened {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    &.position-tr {
+        top: 15px;
+        right: 15px;
+    }
+    
+    &.position-br {
+        bottom: 15px;
+        right: 15px;
+    }
+}

@@ -1,0 +1,119 @@
+@use '../../assets/styles/base/variables';
+@use '../../assets/styles/base/mixins';
+@use '../../assets/styles/base/helpers';
+
+.navbar {
+    @include helpers.fixed-position;
+    
+    background: variables.$navbar-background;
+    right: auto;
+    width: 100px;
+    z-index: 999;
+}
+
+.navbar__menu {
+    @include helpers.listreset;
+}
+
+.navbar__item {
+    border-bottom: variables.$navbar-item-border;
+    
+    &:hover {
+        background: variables.$navbar-item-background-hover;
+    }
+    
+    img {
+        display: block;
+        margin: 0 auto 4px;
+    }
+}
+
+.navbar__item.active {
+    background: variables.$navbar-item-background-active;
+    
+    .navbar__dropdown {
+        display: block;
+    }
+}
+
+.navbar__opener {
+    font: {
+        size: 13px;
+    }
+    padding: 14px 0 0;
+    height: 60px;
+    display: block;
+    text-align: center;
+    
+    &:hover {
+        text-decoration: none;
+    }
+    
+    span {
+        display: block;
+    }
+}
+
+.navbar__closer {
+    position: absolute;
+    right: 13px;
+    color: variables.$navbar-closer-color;
+    top: 9px;
+    font-size: 24px;
+    
+    &:hover {
+        color: variables.$navbar-closer-color-hover;
+    }
+}
+
+.navbar__dropdown {
+    @include mixins.size(430px, 100vh);
+    
+    background: variables.$navbar-dropdown-background;
+    border: variables.$navbar-dropdown-border;
+    position: absolute;
+    overflow-y: auto;
+    display: none;
+    top: 0;
+    left: 100%;
+    padding: 10px;
+    z-index: 100;
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search"],
+    textarea:not(.information__summary) {
+        @include helpers.input-theme;
+        
+        height: 32px;
+        padding: 2px 8px;
+    }
+    
+    textarea {
+        height: 150px !important;
+        resize: none;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    p {
+        margin: 0 0 14px;
+    }
+    
+    .technology__list {
+        margin: 0 0 20px;
+    }
+}
+
+.navbar__title {
+    color: variables.$navbar-title-color;
+    font: {
+        family: 'Alegreya';
+        size: 22px;
+    }
+    letter-spacing: 1px;
+    margin: 5px 0 25px;
+}

@@ -1,0 +1,105 @@
+@use './../../assets/styles/base/helpers';
+
+.layout__visalization .widget__header {
+    height: 62px !important;
+}
+
+.tabs {
+    &.visible {
+        .tabs__prev,
+        .tabs__next {
+            opacity: 1;
+        }
+    }
+    
+    .jcf-scrollbar-dec,
+    .jcf-scrollbar-inc {
+        opacity: 0;
+        width: 0;
+    }
+    
+    .jcf-scrollable-wrapper {
+        padding: 0 0 14px;
+        height: auto !important;
+        width: 100% !important;
+        z-index: 1;
+    }
+    
+    .jcf-scrollable-fake {
+        background: #4d4d4d;
+        position: absolute;
+        width: 100%;
+        height: 14px;
+        bottom: 0;
+        z-index: 0;
+    }
+    
+    .jcf-scrollbar-horizontal {
+        background: #4d4d4d;
+        width: 100% !important;
+    }
+    
+    .jcf-scrollbar-vertical {
+        display: none;
+    }
+    
+    .jcf-scrollbar-horizontal .jcf-scrollbar-slider {
+        
+    }
+    
+    .jcf-scrollbar-horizontal .jcf-scrollbar-handle {
+        background: #e7e5e7;
+        height: 8px;
+        top: 0;
+    }
+}
+
+.tabs__list {
+    height: auto !important;
+    width: 100% !important;
+    
+    ul {
+        @include helpers.listreset;
+
+        padding: 9px 0;
+        display: flex;
+        white-space: nowrap;
+    }
+}
+
+.tabs__item {
+    background: #cecece;
+    margin: 0 0 0 8px;
+    position: relative;
+    padding: 6px 26px 6px 8px;
+    box-sizing: border-box;
+    height: 30px;
+    font: 13px/17px 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    
+    &:first-child {
+        margin: 0;
+    }
+    
+    &.active {
+        background: #fff;
+        
+        a {
+            color: #78808a;
+        }
+    }
+    
+    a {
+        cursor: pointer;
+        color: #464646;
+    }
+}
+
+.tabs__title {
+    display: block;
+}
+
+.tabs__delete {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+}

@@ -1,0 +1,145 @@
+.x-checkbox,
+.x-radio {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    
+    [type="radio"],
+    [type="checkbox"] {
+        position:fixed;
+        left:0;
+        top:0;
+        opacity:0;
+        z-index: -1;
+    }
+    
+    [type="radio"]:checked + .fake-input:before,
+    [type="checkbox"]:checked + .fake-input .fa{opacity:1;}
+    [type="radio"]:checked ~ .fake-label,
+    [type="checkbox"]:checked ~ .fake-label {font-weight:bold; color: #9eda17}
+    
+    .fake-label {
+        display: inline-block;
+        vertical-align: top;
+        padding: 2px 0 0;
+    }
+    
+    .fake-input{
+        color: #777;
+        font-size: 12px;
+        display: inline-block;
+        width:16px;
+        height:16px;
+        border:1px solid #bbb;
+        background:#f8f8f8;
+        vertical-align: middle;
+        position: relative;
+        margin-right: 5px;
+        
+        .fa {
+            opacity: 0;
+            margin: 1px 0 0 1px;
+            vertical-align: top;
+        }
+    }
+    
+    .fake-label {
+        
+    }
+}
+
+.x-radio {
+    .fake-input {
+        border-radius: 100%;
+    }
+    
+    [type="radio"] + .fake-input:before{
+        content:'';
+        position: absolute;
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+        left: 3px;
+        background: #777;
+        border-radius:100%;
+        opacity: 0;
+    }
+}
+
+.jcf-scrollable-wrapper {
+    box-sizing: content-box;
+    position: relative;
+}
+.jcf-scrollbar-vertical {
+    position: absolute;
+    cursor: default;
+    background: #e3e3e3;
+    width: 14px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-dec,
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+    background: #bbb;
+    height: 14px;
+    width: 14px;
+    left: 0;
+    top: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+    top: auto;
+    bottom: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-handle {
+    background: #888;
+    height: 1px;
+    width: 14px;
+}
+.jcf-scrollbar-horizontal {
+    position: absolute;
+    background: #e3e3e3;
+    right: auto;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 14px;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-dec,
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    background: #bbb;
+    height: 14px;
+    width: 14px;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+    left: auto;
+    right: 0;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-slider {
+    display: inline-block;
+    position: relative;
+    height: 14px;
+}
+.jcf-scrollbar-horizontal .jcf-scrollbar-handle {
+    position: absolute;
+    background: #888;
+    height: 14px;
+}
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-handle {
+    visibility: hidden;
+}
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-dec,
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-inc {
+    background: #e3e3e3;
+}

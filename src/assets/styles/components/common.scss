@@ -1,0 +1,72 @@
+@use './../../../assets/styles/base/variables' as var;
+@use './../../../assets/styles/base/mixins' as mixins;
+@use './../../../assets/styles/base/helpers' as helpers;
+
+#wrapper {
+    @include helpers.isolation;
+    
+    //padding: 0 430px 0 115px;
+    padding: 0 0 0 100px;
+}
+
+.table-info {
+    margin: 0 0 -1px;
+    width: 100%;
+    
+    td {
+        color: var.$white;
+        border: 1px solid #696969;
+        padding: 4px 8px;
+        vertical-align: top;
+        
+        &:first-child {
+            color: var.$gray;
+            width: 110px;
+        }
+        
+        &:last-child {
+            width: calc(100% - 110px);
+        }
+    }
+}
+
+.button {
+    @include mixins.inline-block;
+    
+    border: var.$btn-border;
+    background: var.$btn-background;
+    color: var.$btn-color;
+    cursor: pointer;
+    min-width: 80px;
+    padding: 5px 10px;
+    position: relative;
+    text-align: center;
+    
+    .fa {
+        margin: 0 5px 0 0;
+    }
+    
+    &:disabled {
+        opacity: 0.7;
+    }
+    
+    &:hover {
+        background: var.$btn-background-hover;
+    }
+    
+    &:active {
+        background: var.$btn-background-active;
+    }
+    
+    &:focus {
+        outline: none;
+    }
+    
+    input[type="file"] {
+        @include helpers.hidden-file;
+    }
+}
+
+.hidden {
+    display: none;
+}

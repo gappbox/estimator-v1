@@ -1,0 +1,1 @@
+export ProviderIndexedDB from './indexedDB';

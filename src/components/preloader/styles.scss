@@ -1,0 +1,112 @@
+@use '../../assets/styles/base/variables';
+@use '../../assets/styles/base/mixins';
+@use '../../assets/styles/base/helpers';
+
+.loading-provider {
+    .loader {
+        @include helpers.fixed-position;
+        
+        background: variables.$preloader-background;
+        transform: translate3D(0, 0, 0);
+        z-index: 9999;
+    }
+    
+    .loader-h {
+        display: block;
+        transform: scale(2.5);
+    }
+}
+
+.loading {
+    .loader-h {
+        display: block;
+    }
+    
+    .button .text {
+        opacity: 0;
+    }
+}
+
+.loader-h {
+    @include mixins.size(24px);
+    @include helpers.position-center;
+    
+    display: none;
+    overflow: hidden;
+    
+    .loader-f {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top:-50px;
+        margin-left:-50px;
+    }
+    
+    .loader-wrap {
+        @include mixins.size(100px);
+        
+        position:absolute;
+        top: 0;
+        left: 0;
+
+        animation: rotateThis 1s infinite linear;
+        -webkit-animation: rotateThis 1s infinite linear;
+        transform: translate3D(0, 0, 0);
+    }
+    
+    .loader-wrap > div {
+        @include mixins.size(10px, 30px);
+
+        background: variables.$white;
+        position:absolute;
+        top:35px;
+        left:45px;
+        border-radius: 50px;
+    }
+}
+
+.bar1 {
+    transform:rotate(0deg) translate(0, -40px); opacity:0.1;
+}
+.bar2 {
+    transform:rotate(36deg) translate(0, -40px); opacity:0.2;
+}
+.bar3 {
+    transform:rotate(72deg) translate(0, -40px); opacity:0.3;
+}
+.bar4 {
+    transform:rotate(108deg) translate(0, -40px); opacity:0.4;
+}
+.bar5 {
+    transform:rotate(144deg) translate(0, -40px); opacity:0.5;
+}
+.bar6 {
+    transform:rotate(180deg) translate(0, -40px); opacity:0.6;
+}
+.bar7 {
+    transform:rotate(216deg) translate(0, -40px); opacity:0.7;
+}
+.bar8 {
+    transform:rotate(252deg) translate(0, -40px); opacity:0.8;
+}
+.bar9 {
+    transform:rotate(288deg) translate(0, -40px); opacity:0.9;
+}
+.bar10 {
+    transform:rotate(324deg) translate(0, -40px); opacity:1;
+}
+
+@keyframes rotateThis {
+    from { transform:scale(0.2) rotate(0deg); }
+    to 	 { transform:scale(0.2) rotate(360deg); }
+}
+
+@-moz-keyframes rotateThis {
+    from { -moz-transform:scale(0.2) rotate(0deg); }
+    to 	 { -moz-transform:scale(0.2) rotate(360deg); }
+}
+
+@-webkit-keyframes rotateThis {
+    from { -webkit-transform:scale(0.2) rotate(0deg); }
+    to 	 { -webkit-transform:scale(0.2) rotate(360deg); }
+}

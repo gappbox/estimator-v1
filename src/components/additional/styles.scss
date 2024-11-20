@@ -1,0 +1,48 @@
+@use '../../assets/styles/base/_variables';
+@use '../../assets/styles/base/_mixins';
+@use '../../assets/styles/base/_helpers';
+
+.additional {
+    
+}
+
+.additional__list {
+    margin: 0 0 15px;
+}
+
+.additional__item {
+    margin: 15px 0 0;
+    position: relative;
+    
+    &:first-child {
+        margin: 0;
+    }
+}
+
+.additional__sub-title {
+    margin: 0 0 8px;
+}
+
+.additional__time {
+    margin: 0 0 15px;
+    
+    .fa {
+        margin: 0 3px 0 0;
+    }
+}
+
+.additional__summary_textarea {
+    @include helpers.input-theme;
+    
+    padding: 10px 10px;
+    height: 150px;
+    resize: none;
+    max-width: 100%;
+}
+
+.additional__clear {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}

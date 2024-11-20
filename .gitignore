@@ -19,6 +19,7 @@
 /connect.lock
 /coverage
 /dist
+/build
 /libpeerconnection.log
 /node_modules
 /out-tsc
